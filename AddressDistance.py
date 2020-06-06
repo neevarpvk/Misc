@@ -1,7 +1,10 @@
 import pandas as pd
 import numpy as np
-df = pd.read_csv('/Users/praveenvudumu/downloads/goepy_address.csv')
 from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
+
+df = pd.read_csv('/Users/praveenvudumu/downloads/goepy_address.csv')
+
 geolocator = Nominatim()
 
 # store in a df
@@ -13,10 +16,6 @@ df["lon1"] = df['Cor1'].apply(lambda x: x.longitude if x != None else None)
 
 df["lat2"] = df['Cor2'].apply(lambda x: x.latitude if x != None else None)
 df["lon2"] = df['Cor2'].apply(lambda x: x.longitude if x != None else None)
-
-#df = df.dropna()
-
-from geopy.distance import geodesic
 
 def distance(row):
     add1 = (row['lat1'], row['lon1'])
