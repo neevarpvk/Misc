@@ -3,7 +3,7 @@ import numpy as np
 from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 
-df = pd.read_csv('/Users/praveenvudumu/downloads/goepy_address.csv')
+df = pd.read_csv('/Users/praveen/downloads/goepy_address.csv')
 
 geolocator = Nominatim()
 
